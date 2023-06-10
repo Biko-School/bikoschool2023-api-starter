@@ -8,7 +8,9 @@ export function createApp(db: LowdbSync<DatabaseSchema>) {
   const app: Express = express();
   // Shows request log on terminal
   // https://github.com/expressjs/morgan
-  app.use(morgan("dev"));
+  if (process.env.NODE_ENV !== "test") {
+    app.use(morgan("dev"));
+  }
   // Parses incoming requests with JSON payloads
   // http://expressjs.com/es/api.html#express.json
   app.use(express.json());

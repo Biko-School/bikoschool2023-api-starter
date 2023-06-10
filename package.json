@@ -14,8 +14,8 @@
     "build:type-check": "tsc --noEmit",
     "build:clean": "rimraf dist",
     "build:run-babel-node": "babel src -d dist --ignore=\"./src/**/*.spec.ts\" --extensions \".ts\"",
-    "test": "jest --colors",
-    "test:watch": "jest --watch --colors"
+    "test": "NODE_ENV=test jest --colors",
+    "test:watch": "NODE_ENV=test jest --watch --colors"
   },
   "dependencies": {
     "express": "^4.18.2",
